@@ -1,0 +1,151 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+ /* Styling to header */
+.header {
+  height: 12vh;
+  display: flex;
+  /* position: absolute; */
+  background-image: url(https://w0.peakpx.com/wallpaper/223/577/HD-wallpaper-google-pixel-black-grey-design-dark-gray-solid-colors-plain-thumbnail.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.left {
+  width: 50%;
+  padding: 1%;
+  height: 100%;
+  left: 2%;
+  top: 2%;
+  font-size: 350%;
+}
+
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 90%;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 100%;
+  font-size: 150%;
+}
+
+.navbar ul {
+  overflow: auto;
+}
+
+.navbar li {
+  list-style: none;
+  float: right;
+  margin: 1%;
+  padding: 1%;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-btn {
+  text-decoration: none;
+  position: relative;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  width: 9em;
+  height: 3em;
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg, #15a6a1, #6DFC6B);
+  background-size: 300%;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.nav-btn:hover {
+  animation: ani 1.5s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.nav-btn:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #15a6a1, #6DFC6B);
+  background-size: 400%;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.nav-btn:hover::before {
+  filter: blur(20px);
+}
+
+.nav-btn:active {
+  background: linear-gradient(32deg, #489f727c, #10d164);
+}
